@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="{% static 'style.css' %}"/>
+		<title>تماس با ما </title>
+
+	</head>
+	<body>
+		<div class="main-header">
+			<img src="{% static 'img/Hedear.png' %}" alt="کمپینگ ساحلی قو" class="header-img"/>
+			<div class="mainmenu">
+				<ul>
+					<li> <a href="http://appqoo.ir"><img src="{% static 'img/qoo.jpg' %}" alt="logo" class="logo"/> </a> </li>
+					<li> <a href="http://appqoo.ir"  class="li-mainmenu" >  اپلیکیشن قو </a> </li>
+					<ul class='li-mainmenu-2'>
+						<li> <a href="http://e-cab.Cloud/panel" target='_blank'>پنل سازمانی </a> </li>
+						<li> <a href="http://app.appqoo.ir"> نسخه وب </a> </li>
+						<li> <a href="http://appqoo.ir/rules"> قوانین و مقررات </a> </li>
+						<li> <a href="#contactus"> تماس با ما </a> </li>
+					</ul>
+				</ul>
+			</div>
+			<div class="icon-img">
+					<div class='dl-div'>
+						<a href="https://anardoni.com/ios/app/5S4TqPZOo"><img src="{% static 'img/Anardooni.svg' %}" alt="اپلیکیشن قو" class='dl-icon'/></a>
+						<a href="http://appqoo.ir/App/QooPassenger-ios.ipa"><img src="{% static 'img/Web.svg' %}" alt="اپلیکیشن قو" class='dl-icon'/></a>
+					</div>
+					<div class='dl-div'>
+						<a href="https://cafebazaar.ir/app/ir.ecab.qoo.passenger"><img src="{% static 'img/Cafe bazar.svg' %}" alt="اپلیکیشن قو" class='dl-icon'/></a>
+						<a href="http://appqoo.ir/App/app-qoo-passenger-android.apk"><img src="{% static 'img/Android.svg' %}" alt="اپلیکیشن قو" class='dl-icon'/></a>
+					</div>
+			</div>
+		</div>
+		<div>
+			<h3 class="h3-classi">پشتیبانی و تماس با ما</h3>
+			<hr class="hr-classi"/>
+			<div class="forms">
+				<div class="tab-slider--nav">
+					<ul class="tab-slider--tabs">
+						<li class="tab-slider--trigger active" rel="tab1"> تماس با ما</li>
+						<li class="tab-slider--trigger" rel="tab2">ثبت مشکل یا طرح پرسش</li>
+						<li class="tab-slider--trigger" rel="tab3">درخواست بازگشت اعتبار</li>
+					</ul>
+				</div>
+				<div class="tab-slider--container">
+					<div id="tab1" class="tab-slider--body">
+						<div class="form-div-iki">
+							<div class="support-div">
+								<div class="support-classi">
+									<div class="support-matn">
+										<p class="suport-p"> پشتیبانی ایمیلی</p><br/>
+										<a href="mailto:support@appqoo.ir" class="suport-a">support@appqoo.ir</a>
+									</div>
+									<img src="{% static 'img/Email.svg' %}" alt="پشتیبانی ایمیلی" class="suport-img"/>
+								</div>
+								<div class="support-classi">
+									<img src="{% static 'img/Call.svg' %}" alt="پشتیبانی تلفنی" class="suport-img-iki"/>
+									<div class="support-matn-iki">
+										<p class="suport-p"> پشتیبانی تلفنی</p><br/>
+										<a href="tel:01154232534" class="suport-a">01154232534</a>
+									</div>
+								</div>
+							</div>
+							<div class="address">
+								<p class="add-p">آدرس دفتر تهران</p>
+								<p class="add-p-iki"> تهران، کوی نصر، خیابان بلوچستان، کوچه پنجم، پلاک2</p>
+								<p class="add-p">آدرس دفتر مازندران</p>
+								<p class="add-p-iki"> تنکابن، میدان شهید شیرودی، ساختمان پارس، طبقه 5، واحد 39  </p>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab2" class="tab-slider--body">
+						<div class="form-div">
+							<form class="formclass" method="post" action='{% url "contactus:contactusform" %}' >
+								{{formP}}
+								{% csrf_token %}
+								<input class="dokme" type="submit" value="ارسال">
+							</form>
+						</div>
+					</div>
+
+					<div id="tab3" class="tab-slider--body">
+						<div class="form-div">
+							<form class="formclass" method="post" action='' >
+								{{formR}}
+								{% csrf_token %}
+								<input class="dokme" type="submit" value="ارسال">
+							</form>
+						</div>
+					</div>
+				</div>
+				<script src="{% static 'jquery.min.js' %}"></script><script src="{% static 'script2.js' %}"></script>
+			</div>
+		</div>
+		<!-- ************************************ -->
+		<footer>
+			<img src="{% static 'img/f.png' %}" alt="footer" class="footer-img"/>
+			<div class="footer-classi">
+				<div class="footer-pp">
+					<p class="footer-p">دفتر تهران</p>
+					<p class="footer-p-iki"> تهران، کوی نصر، خیابان بلوچستان، کوچه پنجم، پلاک2</p>
+					<p class="footer-p">دفتر مازندران</p>
+					<p class="footer-p-iki"> تنکابن، میدان شهید شیرودی، ساختمان پارس، طبقه 5، واحد 39  </p>
+					<div>
+						<a><img src="{% static 'img/inestagram.png' %}" alt="شبکه های اجتماعی" class="footer-img-iki"/></a>
+						<a><img src="{% static 'img/telegram.png' %}" alt="شبکه های اجتماعی" class="footer-img-iki"/></a>
+						<a><img src="{% static 'img/facebook.png' %}" alt="شبکه های اجتماعی" class="footer-img-iki-f"/></a>
+					</div>
+				</div>
+				<div class="footer-cc">
+					<!-- <ul>
+							<li> <a href="#"> اپلیکیشن قو </a> </li>
+							<li> <a href="#"> رزرو خدمات تفریحی </a> </li>
+							<li> <a href="#">ارتباط با ما</a> </li>
+					</ul> -->
+<!-- 						<a><img src="img/component (16).png" alt="enamad" class="footer-img-och"/></a>
+ -->			</div>
+				<div style="width:100%;max-width: 100%;text-align: left;position: absolute;">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.809108169292!2d50.8706123152906!3d36.823093979943856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zMzbCsDQ5JzIzLjEiTiA1MMKwNTInMjIuMSJF!5e0!3m2!1sen!2s!4v1607532343577!5m2!1sen!2s" width="30%" height="200px" frameborder="0" class="footer-map" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				</div>
+			</div>
+		</footer>
+		<div class="ccopy">
+			<p class="ccopy-p">	&copy;  تمامی حقوق مادی و معنوی این سایت در اختیار گروه آوای قو می‌باشد . </p>
+		</div>
+		<!-- ************************************ -->
+
+
+
+	</body>
+</html>
